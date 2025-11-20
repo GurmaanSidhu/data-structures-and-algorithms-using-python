@@ -33,15 +33,28 @@ class Llist:
         while curr:
             if curr.value == value:
                 prev.next = curr.next
-                return 
-            
-    
+                return True
+            prev = curr
+            curr = curr.next
 
+        return False
+    
+    def find(self, value):
+        curr = self.head
+        index = 0
+        while curr:
+            if curr.value == value:
+                return index
+            curr = curr.next
+            index += 1
+        return -1   
+    
+            
     def print(self):
-        t = self.head
-        while t != None:
-            print(t.value,end=" -> ")
-            t = t.next
+        temp = self.head
+        while temp != None:
+            print(temp.value,end=" -> ")
+            temp = temp.next
         print(None)
 
 l1 = Llist()
@@ -51,4 +64,7 @@ l1.prepend(30)
 l1.append(40)
 l1.append(50)
 l1.delete(20)
+l1.delete(10)
 l1.print()
+print("Index:", l1.find(50))
+# l1.reverse()
