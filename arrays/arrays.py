@@ -15,3 +15,16 @@ print(fruits)
 vegitables = ['tomato', 'bringle', 'coliflower']
 vegitables.extend(fruits)
 print(vegitables)
+
+# Inserts an element at a particular index
+fruits.insert(2, 'guava')
+print(fruits)
+
+fruits.remove("guava")
+print(fruits)
+
+fruits.pop(1)
+print(fruits)
+
+vegitables.clear()
+print(vegitables)
